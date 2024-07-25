@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Timer</title>
+</head>
+<body>
+
+    <div id="Timer"></div>
+
+
+    <script>
+           let ele = document.getElementById("Timer");
+
+           function displayTimer(){
+            const d = new Date();
+            let Hours = d.getHours() <10 ?"0"+ d.getHours() :  d.getHours();
+            let Minutes = d.getMinutes()<10?"0"+ d.getMinutes() : d.getMinutes();
+            let Seconds = d.getSeconds()<10?"0"+ d.getSeconds() : d.getSeconds();
+            let Timer = Hours + " : " + Minutes + " : " + Seconds;
+            ele.innerHTML = Timer;
+           }
+
+           displayTimer();
+           setInterval(displayTimer, 1000);
+
+    </script>
+    
+</body>
+</html>
